@@ -9,6 +9,7 @@ const addPurchase = (req, res) => {
     QuantityPurchased: req.body.quantityPurchased,
     PurchaseDate: req.body.purchaseDate,
     TotalPurchaseAmount: req.body.totalPurchaseAmount,
+    ExpiryDate: req.body.expiryDate,
   });
 
   addPurchaseDetails
@@ -30,6 +31,13 @@ const getPurchaseData = async (req, res) => {
   res.json(findAllPurchaseData);
 };
 
+const getExpiryData = async (req, res) => {
+  const findAllExpiryData = await Purchase.find({"userID": req.params.userID})
+    .sort({ _id: -1 })
+    .populate("ProductID"); // -1 for descending order
+  res.json(findAllExpiryData);
+};
+
 // Get total purchase amount
 const getTotalPurchaseAmount = async (req, res) => {
   let totalPurchaseAmount = 0;
@@ -40,4 +48,4 @@ const getTotalPurchaseAmount = async (req, res) => {
   res.json({ totalPurchaseAmount });
 };
 
-module.exports = { addPurchase, getPurchaseData, getTotalPurchaseAmount };
+module.exports = { addPurchase, getPurchaseData, getExpiryData,getTotalPurchaseAmount };

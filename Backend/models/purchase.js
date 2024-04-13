@@ -24,6 +24,10 @@ const PurchaseSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    ExpiryDate: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

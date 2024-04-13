@@ -142,7 +142,7 @@ export default function AddStore() {
                           <div>
                             <label
                               htmlFor="category"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block  text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Category
                             </label>
@@ -156,10 +156,9 @@ export default function AddStore() {
                                 })
                               }
                             >
-                              <option selected="" value="Electronics">
-                                Electronics
-                              </option>
+                              <option selected="" value="Select Category">Select Category</option>
                               <option value="Groceries">Groceries</option>
+                              <option value="Electronics">Electronics</option>
                               <option value="Wholesale">WholeSale</option>
                               <option value="SuperMart">SuperMart</option>
                               <option value="Phones">Phones</option>
@@ -168,7 +167,7 @@ export default function AddStore() {
                           <div className="sm:col-span-2">
                             <label
                               htmlFor="address"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Address
                             </label>

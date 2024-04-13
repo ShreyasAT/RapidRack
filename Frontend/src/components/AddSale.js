@@ -96,10 +96,10 @@ export default function AddSale({
                           <div>
                             <label
                               htmlFor="productID"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block  text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Product Name
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Product Name</span>
                             <select
                               id="productID"
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -121,10 +121,10 @@ export default function AddSale({
                           <div>
                             <label
                               htmlFor="stockSold"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Stock Sold
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Quantity</span>
                             <input
                               type="number"
                               name="stockSold"
@@ -141,10 +141,10 @@ export default function AddSale({
                           <div>
                             <label
                               htmlFor="storeID"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Store Name
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Store Name</span>
                             <select
                               id="storeID"
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -166,10 +166,10 @@ export default function AddSale({
                           <div>
                             <label
                               htmlFor="totalSaleAmount"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Total Sale Amount
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Cost</span>
                             <input
                               type="number"
                               name="totalSaleAmount"
@@ -179,7 +179,7 @@ export default function AddSale({
                                 handleInputChange(e.target.name, e.target.value)
                               }
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="$299"
+                              placeholder="₹"
                             />
                           </div>
                           <div className="h-fit w-fit">
@@ -189,11 +189,11 @@ export default function AddSale({
                               setShow={handleClose}
                             /> */}
                             <label
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
                               htmlFor="salesDate"
                             >
                               Sales Date
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Sales Date</span>
                             <input
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               type="date"

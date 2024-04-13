@@ -14,6 +14,7 @@ import Store from "./pages/Store";
 import Sales from "./pages/Sales";
 import PurchaseDetails from "./pages/PurchaseDetails";
 
+
 const App = () => {
   const [user, setUser] = useState("");
   const [loader, setLoader] = useState(true);

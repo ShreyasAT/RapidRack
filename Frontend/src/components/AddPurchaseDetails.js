@@ -14,6 +14,7 @@ export default function AddPurchaseDetails({
     quantityPurchased: "",
     purchaseDate: "",
     totalPurchaseAmount: "",
+    expiryDate: "",
   });
   const [open, setOpen] = useState(true);
   const cancelButtonRef = useRef(null);
@@ -98,7 +99,7 @@ export default function AddPurchaseDetails({
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Product Name
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Product</span>
                             <select
                               id="productID"
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -107,7 +108,7 @@ export default function AddPurchaseDetails({
                                 handleInputChange(e.target.name, e.target.value)
                               }
                             >
-                              <option selected="">Select Products</option>
+                              <option selected="">Select Product</option>
                               {products.map((element, index) => {
                                 return (
                                   <option key={element._id} value={element._id}>
@@ -123,7 +124,7 @@ export default function AddPurchaseDetails({
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
                               Quantity Purchased
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Quantity Purchased</span>
                             <input
                               type="number"
                               name="quantityPurchased"
@@ -133,28 +134,10 @@ export default function AddPurchaseDetails({
                                 handleInputChange(e.target.name, e.target.value)
                               }
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="0 - 999"
+                              placeholder="0-999"
                             />
                           </div>
-                          <div>
-                            <label
-                              htmlFor="totalPurchaseAmount"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Total Purchase Amount
-                            </label>
-                            <input
-                              type="number"
-                              name="totalPurchaseAmount"
-                              id="price"
-                              value={purchase.totalPurchaseAmount}
-                              onChange={(e) =>
-                                handleInputChange(e.target.name, e.target.value)
-                              }
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="$299"
-                            />
-                          </div>
+                        
                           <div className="h-fit w-fit">
                             {/* <Datepicker
                               onChange={handleChange}
@@ -162,11 +145,11 @@ export default function AddPurchaseDetails({
                               setShow={handleClose}
                             /> */}
                             <label
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
                               htmlFor="purchaseDate"
                             >
                               Purchase Date
-                            </label>
+                            </label><span className="text-gray-900 text-sm">Purchase Date</span>
                             <input
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               type="date"
@@ -176,6 +159,48 @@ export default function AddPurchaseDetails({
                               onChange={(e) =>
                                 handleInputChange(e.target.name, e.target.value)
                               }
+                            />
+                          </div>
+                          <div className="h-fit w-fit">
+                            {/* <Datepicker
+                              onChange={handleChange}
+                              show={show}
+                              setShow={handleClose}
+                            /> */}
+                            <label
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
+                              htmlFor="purchaseDate"
+                            >
+                              Expiry Date
+                            </label><span className="text-gray-900 text-sm">Expiry Date</span>
+                            <input
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              type="date"
+                              id="expiryDate"
+                              name="expiryDate"
+                              value={purchase.expiryDate}
+                              onChange={(e) =>
+                                handleInputChange(e.target.name, e.target.value)
+                              }
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="totalPurchaseAmount"
+                              className="block text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Total Purchase Amount
+                            </label><span className="text-gray-900 text-sm">Cost</span>
+                            <input
+                              type="number"
+                              name="totalPurchaseAmount"
+                              id="price"
+                              value={purchase.totalPurchaseAmount}
+                              onChange={(e) =>
+                                handleInputChange(e.target.name, e.target.value)
+                              }
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="₹"
                             />
                           </div>
                         </div>
